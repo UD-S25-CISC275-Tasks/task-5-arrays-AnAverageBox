@@ -5,7 +5,9 @@
  * the number twice.
  */
 export function bookEndList(numbers: number[]): number[] {
-    return numbers;
+    // returns first and last number from array of numbers
+    let nums = [numbers[0], numbers[numbers.length - 1]];
+    return nums;
 }
 
 /**
@@ -13,7 +15,9 @@ export function bookEndList(numbers: number[]): number[] {
  * number has been tripled (multiplied by 3).
  */
 export function tripleNumbers(numbers: number[]): number[] {
-    return numbers;
+    let newNumbers: number[] = numbers.map((number) => number * 3);
+
+    return newNumbers;
 }
 
 /**
@@ -21,7 +25,11 @@ export function tripleNumbers(numbers: number[]): number[] {
  * the number cannot be parsed as an integer, convert it to 0 instead.
  */
 export function stringsToIntegers(numbers: string[]): number[] {
-    return [];
+    let realNumbers: number[] = numbers.map((number) =>
+        Number.isNaN(Number(number)) ? 0 : Number(number),
+    );
+
+    return realNumbers;
 }
 
 /**
